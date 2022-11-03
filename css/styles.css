@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+.navHolder {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  background-color: black;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.logo h1 {
+  color: antiquewhite;
+}
+
+.bars {
+  display: none;
+}
+
+.bars .bar {
+  display: block;
+  width: 25px;
+  margin: 5px 0;
+  background-color: black;
+  height: 3px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.bars.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.bars.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.bars.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.links {
+  display: flex;
+  /* display: none; */
+  // background-color: black;
+  height: 50px;
+  width: 50%;
+  overflow: hidden;
+  margin-left: -10px;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: height 0.2s, opacity 0.2s ease-in;
+}
+
+.links a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+
+.links.active {
+  height: 100vh;
+  opacity: 1;
+}
+
+.hero {
+  width: 100%;
+  height: 750px;
+  background-image: url(../images/hero.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 960px) {
+  .navHolder .bars {
+    display: block;
+    position: fixed;
+    right: 0;
+  }
+
+  .navHolder .logo {
+    display: none;
+  }
+
+  .navHolder .links {
+    height: 0;
+    opacity: 0;
+    flex-direction: column;
+  }
+}
+
+#app {
+  margin: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.game-holder {
+  width: 300px;
+  margin-bottom: 30px;
+  border-bottom: solid 1px #000;
+  text-align: center;
+}
+
+.brief-rating {
+  font-size: 12px;
+}
+
+.brief-des {
+  margin-bottom: 10px;
+}
